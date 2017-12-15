@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.widget.EditText;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class LoginActivity extends AppCompatActivity {
@@ -17,13 +18,12 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        ButterKnife.bind(this);
     }
 
     @OnClick(R.id.confirmar_login)
     public void onConfirmar () {
-        Intent intent = new Intent(this, HomeActivity.class);
-        startActivity(intent);
+        startActivity(new Intent(this, HomeActivity.class));
     }
-
-
+    
 }
