@@ -1,18 +1,15 @@
-package br.poli.ecomp.selfcheckout;
+package br.poli.ecomp.selfcheckout.views;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.EditText;
 
-import butterknife.BindView;
+import br.poli.ecomp.selfcheckout.R;
+import br.poli.ecomp.selfcheckout.views.home.HomeActivity;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class LoginActivity extends AppCompatActivity {
-
-    @BindView(R.id.email)
-    EditText mEmailEdit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,5 +22,5 @@ public class LoginActivity extends AppCompatActivity {
     public void onConfirmar () {
         startActivity(new Intent(this, HomeActivity.class));
     }
-    
+
 }
