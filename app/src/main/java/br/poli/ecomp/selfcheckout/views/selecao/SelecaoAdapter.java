@@ -62,8 +62,9 @@ public class SelecaoAdapter extends ArrayAdapter<SelecaoItem>{
         }
 
         mNomeItem.setText(itens.get(position).nomeItem);
-        mPrecoItem.setText("R$" + (new DecimalFormat("0,00")).format(itens.get(position).precoItem * 100));
+        mPrecoItem.setText("R$" + String.format("%.2f", itens.get(position).precoItem));
         mImageItem.setImageDrawable(itens.get(position).imagemItem);
+        mQuantidade.setText("" + itens.get(position).quantidadeItem);
         mQuantidade.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -75,7 +76,9 @@ public class SelecaoAdapter extends ArrayAdapter<SelecaoItem>{
 
             @Override
             public void afterTextChanged(Editable s) {
-                SelfCheckoutApplication.itens.put(itens.get(position).nomeItem, itens.get(position));
+                if (!s.toString().equals("")) {
+                    saveText(position, Integer.parseInt(s.toString()));
+                }
             }
         });
         mAdicionar.setOnClickListener(new View.OnClickListener() {
@@ -83,8 +86,9 @@ public class SelecaoAdapter extends ArrayAdapter<SelecaoItem>{
             public void onClick(View v) {
                 int qtd = itens.get(position).quantidadeItem;
                 qtd++;
+                //FIXME cant reference mQuantidade
                 mQuantidade.setText("" + qtd);
-                itens.get(position).quantidadeItem = qtd;
+
             }
         });
         mRemover.setOnClickListener(new View.OnClickListener() {
@@ -94,12 +98,16 @@ public class SelecaoAdapter extends ArrayAdapter<SelecaoItem>{
                 if (qtd > 0) {
                     qtd--;
                     mQuantidade.setText("" + qtd);
-                    itens.get(position).quantidadeItem = qtd;
                 }
             }
         });
 
         return convertView;
+    }
+
+    private void saveText (int position, int qtd) {
+        itens.get(position).quantidadeItem = qtd;
+        SelfCheckoutApplication.itens.put(itens.get(position).nomeItem, itens.get(position));
     }
 
 }

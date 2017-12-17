@@ -48,7 +48,7 @@ public class HomeAdapter extends ArrayAdapter<HomeItem>{
         ButterKnife.bind(this, convertView);
 
         mNomeItem.setText(itens.get(position).nomeItem);
-        mPrecoItem.setText("R$" + (new DecimalFormat("0,00")).format(itens.get(position).precoItem * 100));
+        mPrecoItem.setText("R$" + String.format("%.2f", itens.get(position).precoItem));
         mImageItem.setImageDrawable(itens.get(position).imagemItem);
 
         return convertView;

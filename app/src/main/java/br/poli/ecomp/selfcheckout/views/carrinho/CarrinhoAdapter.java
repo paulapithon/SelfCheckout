@@ -51,7 +51,7 @@ public class CarrinhoAdapter extends ArrayAdapter<SelecaoItem>{
         }
 
         mNomeItem.setText(itens.get(position).nomeItem);
-        mPrecoItem.setText("R$" + (new DecimalFormat("0,00")).format(itens.get(position).precoItem * 100));
+        mPrecoItem.setText("R$" + (String.format("%.2f", itens.get(position).precoItem)));
         mQuantidadeItem.setText(itens.get(position).quantidadeItem + " x");
 
         return convertView;
