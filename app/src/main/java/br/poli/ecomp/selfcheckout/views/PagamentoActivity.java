@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import br.poli.ecomp.selfcheckout.R;
+import br.poli.ecomp.selfcheckout.SelfCheckoutApplication;
+import br.poli.ecomp.selfcheckout.views.home.HomeActivity;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -39,7 +41,10 @@ public class PagamentoActivity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 alert.dismiss();
-                Intent intent = new Intent(PagamentoActivity.this, LoginActivity.class);
+
+                SelfCheckoutApplication.clearLists();
+
+                Intent intent = new Intent(PagamentoActivity.this, HomeActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
             }

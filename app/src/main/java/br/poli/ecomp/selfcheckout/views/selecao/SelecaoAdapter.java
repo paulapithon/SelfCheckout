@@ -65,6 +65,7 @@ public class SelecaoAdapter extends ArrayAdapter<SelecaoItem>{
         mPrecoItem.setText("R$" + String.format("%.2f", itens.get(position).precoItem));
         mImageItem.setImageDrawable(itens.get(position).imagemItem);
         mQuantidade.setText("" + itens.get(position).quantidadeItem);
+
         mQuantidade.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {

@@ -54,4 +54,15 @@ public class SelfCheckoutApplication extends Application {
         categoria.add(new CategoriaItem("Frios", home));
     }
 
+    public static void clearLists () {
+        itens.clear();
+        for (CategoriaItem categ : categoria) {
+            for (HomeItem home : categ.homeList) {
+                for (SelecaoItem selecao : home.selecaoList) {
+                    selecao.quantidadeItem = 0;
+                }
+            }
+        }
+    }
+
 }

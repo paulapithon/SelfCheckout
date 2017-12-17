@@ -40,6 +40,9 @@ public class CarrinhoActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         List<SelecaoItem> itens = new ArrayList<>();
+        if (SelfCheckoutApplication.itens.isEmpty()) {
+            mPagar.setVisibility(View.INVISIBLE);
+        }
         for(SelecaoItem item : SelfCheckoutApplication.itens.values()) {
             if (item.quantidadeItem == 0) {
                 SelfCheckoutApplication.itens.remove(item.nomeItem);

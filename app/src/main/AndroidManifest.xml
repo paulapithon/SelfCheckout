@@ -27,7 +27,11 @@
             android:label="@string/title_activity_home" />
         <activity android:name=".views.carrinho.CarrinhoActivity" />
         <activity android:name=".views.selecao.SelecaoActivity" />
-        <activity android:name=".views.PagamentoActivity"></activity>
+        <activity android:name=".views.PagamentoActivity" />
+        <activity
+            android:name=".views.Drawer"
+            android:label="@string/title_activity_drawer"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
