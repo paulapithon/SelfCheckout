@@ -56,7 +56,7 @@ public class CarrinhoActivity extends AppCompatActivity {
 
         CarrinhoAdapter adapter = new CarrinhoAdapter(this, R.layout.item_carrinho, itens);
         mListCarrinho.setAdapter(adapter);
-        mTotal.setText("Total: R$" + "R$" + (String.format("%.2f", qtd)));
+        mTotal.setText("Total: R$" + (String.format("%.2f", qtd)));
     }
 
     @OnClick(R.id.pagar)

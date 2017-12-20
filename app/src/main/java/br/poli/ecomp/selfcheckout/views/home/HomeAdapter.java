@@ -66,4 +66,14 @@ public class HomeAdapter extends ArrayAdapter<HomeItem>{
         this.itens = new ArrayList<>(itens);
         notifyDataSetChanged();
     }
+
+    @Override
+    public int getViewTypeCount() {
+        return getCount();
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        return position;
+    }
 }

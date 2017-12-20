@@ -117,4 +117,14 @@ public class SelecaoAdapter extends ArrayAdapter<SelecaoItem>{
         SelfCheckoutApplication.itens.put(itens.get(position).nomeItem, itens.get(position));
     }
 
+    @Override
+    public int getViewTypeCount() {
+        return getCount();
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        return position;
+    }
+
 }
