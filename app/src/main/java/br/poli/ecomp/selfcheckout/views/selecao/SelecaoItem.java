@@ -12,10 +12,10 @@ public class SelecaoItem {
 
     public String nomeItem;
     public double precoItem;
-    public Drawable imagemItem;
+    public int imagemItem;
     public int quantidadeItem;
 
-    public SelecaoItem(String nomeItem, double precoItem, Drawable imagemItem) {
+    public SelecaoItem(String nomeItem, double precoItem, int imagemItem) {
         this.nomeItem = nomeItem;
         this.precoItem = precoItem;
         this.imagemItem = imagemItem;

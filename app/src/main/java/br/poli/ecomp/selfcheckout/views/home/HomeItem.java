@@ -14,10 +14,10 @@ public class HomeItem {
 
     public String nomeItem;
     public double precoItem;
-    public Drawable imagemItem;
+    public int imagemItem;
     public List<SelecaoItem> selecaoList;
 
-    public HomeItem (String nomeItem, double precoItem, Drawable imagemItem, List<SelecaoItem> selecaoList) {
+    public HomeItem (String nomeItem, double precoItem, int imagemItem, List<SelecaoItem> selecaoList) {
         this.nomeItem = nomeItem;
         this.precoItem = precoItem;
         this.imagemItem = imagemItem;

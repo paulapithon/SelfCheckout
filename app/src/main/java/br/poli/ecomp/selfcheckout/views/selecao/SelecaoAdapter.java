@@ -1,6 +1,8 @@
 package br.poli.ecomp.selfcheckout.views.selecao;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.text.Editable;
@@ -63,7 +65,11 @@ public class SelecaoAdapter extends ArrayAdapter<SelecaoItem>{
 
         mNomeItem.setText(itens.get(position).nomeItem);
         mPrecoItem.setText("R$" + String.format("%.2f", itens.get(position).precoItem));
-        mImageItem.setImageDrawable(itens.get(position).imagemItem);
+
+        BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inSampleSize = 4;
+        mImageItem.setImageBitmap(BitmapFactory.decodeResource(getContext().getResources(), itens.get(position).imagemItem, options));
+
         mQuantidade.setText("" + itens.get(position).quantidadeItem);
 
         mQuantidade.addTextChangedListener(new TextWatcher() {

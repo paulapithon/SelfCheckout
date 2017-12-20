@@ -1,6 +1,7 @@
 package br.poli.ecomp.selfcheckout.views.home;
 
 import android.content.Context;
+import android.graphics.BitmapFactory;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.view.View;
@@ -49,8 +50,9 @@ public class HomeAdapter extends ArrayAdapter<HomeItem>{
 
         mNomeItem.setText(itens.get(position).nomeItem);
         mPrecoItem.setText("R$" + String.format("%.2f", itens.get(position).precoItem));
-        mImageItem.setImageDrawable(itens.get(position).imagemItem);
-
+        BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inSampleSize = 4;
+        mImageItem.setImageBitmap(BitmapFactory.decodeResource(getContext().getResources(), itens.get(position).imagemItem, options));
         return convertView;
     }
 
