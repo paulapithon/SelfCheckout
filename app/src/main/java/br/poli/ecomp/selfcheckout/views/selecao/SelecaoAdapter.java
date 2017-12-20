@@ -34,19 +34,6 @@ import butterknife.OnClick;
 
 public class SelecaoAdapter extends ArrayAdapter<SelecaoItem>{
 
-    @BindView(R.id.nome_selecao)
-    TextView mNomeItem;
-    @BindView(R.id.preco_selecao)
-    TextView mPrecoItem;
-    @BindView(R.id.imagem_selecao)
-    ImageView mImageItem;
-    @BindView(R.id.quantidade_selecao)
-    EditText mQuantidade;
-    @BindView(R.id.adicionar)
-    Button mAdicionar;
-    @BindView(R.id.remover)
-    Button mRemover;
-
     private List<SelecaoItem> itens;
 
     public SelecaoAdapter(@NonNull Context context, int resource, @NonNull List<SelecaoItem> objects) {
@@ -58,21 +45,33 @@ public class SelecaoAdapter extends ArrayAdapter<SelecaoItem>{
     @Override
     public View getView(final int position, @Nullable View convertView, @NonNull ViewGroup parent) {
 
+        final SelecaoHolder holder;
         if (convertView == null) {
             convertView = ((SelecaoActivity)getContext()).getLayoutInflater().inflate(R.layout.item_selecao, null);
-            ButterKnife.bind(this, convertView);
+
+            holder = new SelecaoHolder();
+            holder.mNomeItem = convertView.findViewById(R.id.nome_selecao);
+            holder.mPrecoItem = convertView.findViewById(R.id.preco_selecao);
+            holder.mImageItem = convertView.findViewById(R.id.imagem_selecao);
+            holder.mQuantidade = convertView.findViewById(R.id.quantidade_selecao);
+            holder.mAdicionar = convertView.findViewById(R.id.adicionar);
+            holder.mRemover = convertView.findViewById(R.id.remover);
+            convertView.setTag(holder);
+
+        } else {
+            holder = (SelecaoHolder) convertView.getTag();
         }
 
-        mNomeItem.setText(itens.get(position).nomeItem);
-        mPrecoItem.setText("R$" + String.format("%.2f", itens.get(position).precoItem));
+        holder.mNomeItem.setText(itens.get(position).nomeItem);
+        holder.mPrecoItem.setText("R$" + String.format("%.2f", itens.get(position).precoItem));
 
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inSampleSize = 4;
-        mImageItem.setImageBitmap(BitmapFactory.decodeResource(getContext().getResources(), itens.get(position).imagemItem, options));
+        holder.mImageItem.setImageBitmap(BitmapFactory.decodeResource(getContext().getResources(), itens.get(position).imagemItem, options));
 
-        mQuantidade.setText("" + itens.get(position).quantidadeItem);
+        holder.mQuantidade.setText("" + itens.get(position).quantidadeItem);
 
-        mQuantidade.addTextChangedListener(new TextWatcher() {
+        holder.mQuantidade.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
             }
@@ -88,23 +87,23 @@ public class SelecaoAdapter extends ArrayAdapter<SelecaoItem>{
                 }
             }
         });
-        mAdicionar.setOnClickListener(new View.OnClickListener() {
+        holder.mAdicionar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 int qtd = itens.get(position).quantidadeItem;
                 qtd++;
                 //FIXME cant reference mQuantidade
-                mQuantidade.setText("" + qtd);
+                holder.mQuantidade.setText("" + qtd);
 
             }
         });
-        mRemover.setOnClickListener(new View.OnClickListener() {
+        holder.mRemover.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 int qtd = itens.get(position).quantidadeItem;
                 if (qtd > 0) {
                     qtd--;
-                    mQuantidade.setText("" + qtd);
+                    holder.mQuantidade.setText("" + qtd);
                 }
             }
         });
@@ -127,4 +126,8 @@ public class SelecaoAdapter extends ArrayAdapter<SelecaoItem>{
         return position;
     }
 
+
+
 }
+
+
