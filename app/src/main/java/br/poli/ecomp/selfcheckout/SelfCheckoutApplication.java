@@ -33,16 +33,20 @@ public class SelfCheckoutApplication extends Application {
         List<HomeItem> home = new ArrayList<>();
         List<SelecaoItem> selecao = new ArrayList<>();
 
-        selecao.add(new SelecaoItem("Feijão Turqueza", 12.50, getResources().getDrawable(R.drawable.ic_dashboard_black_24dp)));
-        selecao.add(new SelecaoItem("Feijão Azul", 10.50, getResources().getDrawable(R.drawable.ic_dashboard_black_24dp)));
-        selecao.add(new SelecaoItem("Feijão Sei lá", 9.80, getResources().getDrawable(R.drawable.ic_dashboard_black_24dp)));
-        home.add(new HomeItem("Feijão", 12.50, getResources().getDrawable(R.drawable.ic_dashboard_black_24dp), selecao));
+        selecao.add(new SelecaoItem("Feijão Camil Carioca", 12.50, getResources().getDrawable(R.drawable.feijao_camil)));
+        selecao.add(new SelecaoItem("Feijão Kicaldo Preto", 10.50, getResources().getDrawable(R.drawable.feijao_kicaldo_preta)));
+        selecao.add(new SelecaoItem("Feijão Kicaldo Carioca", 9.80, getResources().getDrawable(R.drawable.feijao_kicaldo)));
+        selecao.add(new SelecaoItem("Feijão DuRio Carioca", 9.80, getResources().getDrawable(R.drawable.feijao_durio)));
+        selecao.add(new SelecaoItem("Feijão Solito Preto", 9.80, getResources().getDrawable(R.drawable.feijao_solito_preto)));
+        home.add(new HomeItem("Feijão", 12.50, getResources().getDrawable(R.drawable.feijao_kicaldo), selecao));
         //Adicionar novas categorias pra cada home
         selecao = new ArrayList<>();
-        selecao.add(new SelecaoItem("Arroz Turqueza", 12.50, getResources().getDrawable(R.drawable.ic_dashboard_black_24dp)));
-        selecao.add(new SelecaoItem("Arroz Azul", 10.50, getResources().getDrawable(R.drawable.ic_dashboard_black_24dp)));
-        selecao.add(new SelecaoItem("Arroz Sei lá", 9.80, getResources().getDrawable(R.drawable.ic_dashboard_black_24dp)));
-        home.add(new HomeItem("Arroz", 15.00, getResources().getDrawable(R.drawable.ic_dashboard_black_24dp), selecao));
+        selecao.add(new SelecaoItem("Arroz Camil", 12.50, getResources().getDrawable(R.drawable.arroz_camil)));
+        selecao.add(new SelecaoItem("Arroz Exxtra", 10.50, getResources().getDrawable(R.drawable.arroz_exxtra)));
+        selecao.add(new SelecaoItem("Arroz Solito", 9.80, getResources().getDrawable(R.drawable.arroz_solito)));
+        //selecao.add(new SelecaoItem("Arroz Tio João", 9.80, getResources().getDrawable(R.drawable.arroz_tiojoao)));
+        //selecao.add(new SelecaoItem("Arroz Tio João Integral", 9.80, getResources().getDrawable(R.drawable.arroz_tiojoao_integral)));
+        home.add(new HomeItem("Arroz", 15.00, getResources().getDrawable(R.drawable.arroz_camil), selecao));
         home.add(new HomeItem("Farofa", 10.50, getResources().getDrawable(R.drawable.ic_dashboard_black_24dp), selecao));
         //Adicionar novas homes pra cada item
         categoria.add(new CategoriaItem("Mercearia", home));
