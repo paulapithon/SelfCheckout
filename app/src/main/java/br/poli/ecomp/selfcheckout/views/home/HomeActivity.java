@@ -80,8 +80,6 @@ public class HomeActivity extends AppCompatActivity {
         });
     }
     private void updateAdapter() {
-//        adapter =
-//        adapter.notifyDataSetChanged();
         adapter.updateAdapter(SelfCheckoutApplication.categoria.get(index).homeList);
     }
 
