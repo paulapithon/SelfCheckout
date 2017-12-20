@@ -33,12 +33,24 @@ public class HomeActivity extends AppCompatActivity {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
-                case R.id.navigation_home:
+                case R.id.navigation_mercearia:
                     index = 0;
                     updateAdapter();
                     return true;
-                case R.id.navigation_dashboard:
+                case R.id.navigation_frios:
                     index = 1;
+                    updateAdapter();
+                    return true;
+                case R.id.navigation_frutas:
+                    index = 2;
+                    updateAdapter();
+                    return true;
+                case R.id.navigation_limpeza:
+                    index = 3;
+                    updateAdapter();
+                    return true;
+                case R.id.navigation_bebidas:
+                    index = 4;
                     updateAdapter();
                     return true;
             }

@@ -124,6 +124,84 @@ public class SelfCheckoutApplication extends Application {
 
         categoria.add(new CategoriaItem("Frios", home));
 
+        home = new ArrayList<>();
+        selecao = new ArrayList<>();
+
+        selecao.add(new SelecaoItem("Papel Higiênico Alpino", 12.50, (R.drawable.papel_alpino)));
+        selecao.add(new SelecaoItem("Papel Higiênico Cotton", 10.50, (R.drawable.papel_cotton)));
+        selecao.add(new SelecaoItem("Papel Higiênico Dual", 9.80, (R.drawable.papel_dual)));
+        selecao.add(new SelecaoItem("Papel Higiênico Neve", 9.80, (R.drawable.papel_neve)));
+        selecao.add(new SelecaoItem("Papel Higiênico Qualité", 9.80, (R.drawable.papel_qualite)));
+        home.add(new HomeItem("Papel Higiênico", 15.00, (R.drawable.papel_alpino), selecao));
+
+        selecao = new ArrayList<>();
+        selecao.add(new SelecaoItem("Sabão em pó Bem-te-vi", 10.50, (R.drawable.po_bemtevi)));
+        selecao.add(new SelecaoItem("Sabão em pó Brilhante", 10.50, (R.drawable.po_brilhante)));
+        selecao.add(new SelecaoItem("Sabão em pó Google", 9.80, (R.drawable.po_google)));
+        selecao.add(new SelecaoItem("Sabão em pó Omo", 9.80, (R.drawable.po_omo)));
+        selecao.add(new SelecaoItem("Sabão em pó Ypê", 9.80, (R.drawable.po_ype)));
+        home.add(new HomeItem("Sabão em pó", 10.50, (R.drawable.po_omo), selecao));
+
+        selecao = new ArrayList<>();
+
+        selecao.add(new SelecaoItem("Detergente Brilux", 10.50, (R.drawable.detergente_brilux)));
+        selecao.add(new SelecaoItem("Detergente Limpol", 10.50, (R.drawable.detergente_limpol)));
+        selecao.add(new SelecaoItem("Detergente Suprema", 9.80, (R.drawable.detergente_suprema)));
+        selecao.add(new SelecaoItem("Detergente Ypê", 9.80, (R.drawable.detergente_ype)));
+        home.add(new HomeItem("Detergente", 12.50, (R.drawable.detergente_brilux), selecao));
+
+        categoria.add(new CategoriaItem("Limpeza", home));
+
+        home = new ArrayList<>();
+        selecao = new ArrayList<>();
+
+        selecao.add(new SelecaoItem("Coca-Cola", 12.50, (R.drawable.coca)));
+        selecao.add(new SelecaoItem("Sprite", 10.50, (R.drawable.sprite)));
+        selecao.add(new SelecaoItem("Pepsi", 9.80, (R.drawable.pepsi)));
+        selecao.add(new SelecaoItem("Guaraná", 9.80, (R.drawable.guarana)));
+        selecao.add(new SelecaoItem("Fanta", 9.80, (R.drawable.fanta)));
+        home.add(new HomeItem("Refrigerante", 15.00, (R.drawable.guarana), selecao));
+
+        selecao = new ArrayList<>();
+        selecao.add(new SelecaoItem("Devassa", 10.50, (R.drawable.c_dev)));
+        selecao.add(new SelecaoItem("Heineken", 10.50, (R.drawable.c_hei)));
+        selecao.add(new SelecaoItem("Itaipava", 9.80, (R.drawable.c_ita)));
+        selecao.add(new SelecaoItem("Skol", 9.80, (R.drawable.c_skol)));
+        home.add(new HomeItem("Cerveja", 10.50, (R.drawable.c_hei), selecao));
+
+        selecao = new ArrayList<>();
+
+        selecao.add(new SelecaoItem("Del Vale", 10.50, (R.drawable.k_del)));
+        selecao.add(new SelecaoItem("Del Vale Laranja", 10.50, (R.drawable.k_la)));
+        selecao.add(new SelecaoItem("Maratá", 9.80, (R.drawable.k_mara)));
+        selecao.add(new SelecaoItem("Kapo", 9.80, (R.drawable.kapo)));
+        home.add(new HomeItem("Suco", 12.50, (R.drawable.k_del), selecao));
+
+        categoria.add(new CategoriaItem("Bebidas", home));
+
+        home = new ArrayList<>();
+        selecao = new ArrayList<>();
+
+        selecao.add(new SelecaoItem("Maça Argentina", 12.50, (R.drawable.maca_arg)));
+        selecao.add(new SelecaoItem("Maça Monica", 10.50, (R.drawable.maca_monica)));
+        selecao.add(new SelecaoItem("Maça Verde", 9.80, (R.drawable.maca_verde)));
+        home.add(new HomeItem("Maça", 15.00, (R.drawable.maca_arg), selecao));
+
+        selecao = new ArrayList<>();
+        selecao.add(new SelecaoItem("Banana Compridaa", 10.50, (R.drawable.ba_comp)));
+        selecao.add(new SelecaoItem("Banana Nanica", 10.50, (R.drawable.ba_nanica)));
+        selecao.add(new SelecaoItem("Banana Prata", 9.80, (R.drawable.ba_prata)));
+        home.add(new HomeItem("Banana", 10.50, (R.drawable.ba_prata), selecao));
+
+        selecao = new ArrayList<>();
+
+        selecao.add(new SelecaoItem("Uva verde", 10.50, (R.drawable.uva_verde)));
+        selecao.add(new SelecaoItem("Uva Sem Caroço", 10.50, (R.drawable.uva_sem)));
+        home.add(new HomeItem("Uva", 12.50, (R.drawable.uva_verde), selecao));
+
+        categoria.add(new CategoriaItem("Frutas", home));
+
+
     }
 
     public static void clearLists () {

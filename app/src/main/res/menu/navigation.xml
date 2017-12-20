@@ -2,14 +2,28 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/navigation_home"
-        android:icon="@drawable/ic_home_black_24dp"
+        android:id="@+id/navigation_mercearia"
+        android:icon="@drawable/bean"
         android:title="Mercearia" />
 
     <item
-        android:id="@+id/navigation_dashboard"
-        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:id="@+id/navigation_frios"
+        android:icon="@drawable/cheese"
         android:title="Frios" />
 
+    <item
+        android:id="@+id/navigation_frutas"
+        android:icon="@drawable/apple"
+        android:title="Frutas" />
+
+    <item
+        android:id="@+id/navigation_limpeza"
+        android:icon="@drawable/window"
+        android:title="Limpeza" />
+
+    <item
+        android:id="@+id/navigation_bebidas"
+        android:icon="@drawable/glass"
+        android:title="Bebidas" />
 
 </menu>
