@@ -41,15 +41,15 @@ public class HomeActivity extends AppCompatActivity {
                     index = 1;
                     updateAdapter();
                     return true;
-                case R.id.navigation_frutas:
+                case R.id.navigation_limpeza:
                     index = 2;
                     updateAdapter();
                     return true;
-                case R.id.navigation_limpeza:
+                case R.id.navigation_bebidas:
                     index = 3;
                     updateAdapter();
                     return true;
-                case R.id.navigation_bebidas:
+                case R.id.navigation_frutas:
                     index = 4;
                     updateAdapter();
                     return true;
